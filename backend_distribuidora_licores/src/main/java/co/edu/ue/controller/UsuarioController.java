@@ -29,17 +29,6 @@ public class UsuarioController {
 		return new ResponseEntity<List<Usuario>>(user, HttpStatus.OK);
 	}
 	
-	@PostMapping
-	public ResponseEntity<Usuario> postUsuario(@RequestBody Usuario usuario) throws Exception{
-		Usuario usuarioLocal = _usuarioService.getUsuarioByEmail(usuario.getUsuEmail());
-		if(usuarioLocal != null) {
-			throw new Exception("Ya existe un usuario registrado con ese correo");
-		}else {
-			usuarioLocal = _usuarioService.postUsuario(usuario);
-			return new ResponseEntity<Usuario>(usuarioLocal, HttpStatus.OK);			
-		}
-	}
-	
 	@PutMapping
 	public ResponseEntity<Usuario> updateUsuario(@RequestBody Usuario usuario){
 		Usuario user = _usuarioService.updateUsuario(usuario);
