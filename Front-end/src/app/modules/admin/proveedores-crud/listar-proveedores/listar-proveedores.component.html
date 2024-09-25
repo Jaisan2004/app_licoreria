@@ -1,0 +1,25 @@
+<h2>Lista de Proveedores</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Empresa</th>
+      <th>Email</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let proveedor of proveedores">
+      <td>{{ proveedor.id }}</td>
+      <td>{{ proveedor.nombre }}</td>
+      <td>{{ proveedor.empresa }}</td>
+      <td>{{ proveedor.email }}</td>
+      <td>
+        <button (click)="editProveedor(proveedor.id)">Editar</button>
+        <button (click)="deleteProveedor(proveedor.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a routerLink="/admin/proveedores/agregar">Agregar Proveedor</a>

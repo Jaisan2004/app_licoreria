@@ -1,0 +1,25 @@
+<h2>Lista de PQRs</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Descripción</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pqr of pqrs">
+      <td>{{ pqr.id }}</td>
+      <td>{{ pqr.descripcion }}</td>
+      <td>{{ pqr.fecha | date:'shortDate' }}</td>
+      <td>{{ pqr.estado }}</td>
+      <td>
+        <button (click)="editPqrs(pqr.id)">Editar</button>
+        <button (click)="deletePqrs(pqr.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a routerLink="/admin/pqrs/agregar">Agregar PQRs</a>

@@ -1,0 +1,89 @@
+.login-form, .register-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+/* Botones */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+button:hover {
+background-color: #0056b3;
+}
+
+/* Formularios */
+form {
+max-width: 400px;
+margin: 20px auto;
+padding: 20px;
+background-color: #fff;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+margin-bottom: 15px;
+}
+
+form label {
+display: block;
+font-size: 14px;
+color: #666;
+margin-bottom: 5px;
+}
+
+form input, form select {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ddd;
+border-radius: 4px;
+}
+
+/* Tablas */
+table {
+width: 100%;
+border-collapse: collapse;
+margin: 20px 0;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+padding: 12px 15px;
+border: 1px solid #ddd;
+text-align: center;
+}
+
+table th {
+background-color: #007bff;
+color: white;
+}
+
+table tr:nth-child(even) {
+background-color: #f9f9f9;
+}

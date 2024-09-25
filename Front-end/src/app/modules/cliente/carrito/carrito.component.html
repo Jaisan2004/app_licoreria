@@ -1,0 +1,13 @@
+<h2>Carrito de Compras</h2>
+<div *ngFor="let producto of carrito; let i = index" class="carrito-item">
+  <h3>{{ producto.nombre }}</h3>
+  <p><strong>Precio:</strong> {{ producto.precio | currency }}</p>
+  <button (click)="removeProducto(i)">Eliminar</button>
+</div>
+
+<h3>Total: {{ total | currency }}</h3>
+
+<button (click)="placeOrder()" [disabled]="carrito.length === 0">Realizar Pedido</button>
+<button (click)="clearCarrito()">Vaciar Carrito</button>
+
+<a routerLink="/cliente/productos">Volver a productos</a>

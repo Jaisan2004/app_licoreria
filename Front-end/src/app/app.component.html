@@ -1,0 +1,15 @@
+<div *ngIf="isAuthenticated">
+  <nav>
+    <ul>
+      <li><a routerLink="/cliente">Cliente</a></li>
+      <li><a routerLink="/admin">Admin</a></li>
+      <li><a routerLink="/admin/productos">Productos</a></li>
+      <li><a routerLink="/admin/clientes">Clientes</a></li>
+      <li><a routerLink="/admin/proveedores">Proveedores</a></li>
+      <li><a routerLink="/admin/pqrs">PQRs</a></li>
+      <li><a (click)="logout()">Cerrar Sesión</a></li>
+    </ul>
+  </nav>
+</div>
+
+<router-outlet></router-outlet>

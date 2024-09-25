@@ -1,0 +1,20 @@
+<h2>Realizar Pedido a Domicilio</h2>
+
+<form (ngSubmit)="placeOrder()">
+  <div>
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" [(ngModel)]="pedido.nombre" name="nombre" required>
+  </div>
+  <div>
+    <label for="direccion">Dirección</label>
+    <input type="text" id="direccion" [(ngModel)]="pedido.direccion" name="direccion" required>
+  </div>
+  <div>
+    <label for="telefono">Teléfono</label>
+    <input type="text" id="telefono" [(ngModel)]="pedido.telefono" name="telefono" required>
+  </div>
+
+  <button type="submit">Enviar Pedido</button>
+</form>
+
+<a routerLink="/cliente/carrito">Volver al Carrito</a>

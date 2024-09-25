@@ -1,0 +1,25 @@
+<h2>Lista de Productos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos">
+      <td>{{ producto.id }}</td>
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.descripcion }}</td>
+      <td>{{ producto.precio }}</td>
+      <td>
+        <button (click)="editProducto(producto.id)">Editar</button>
+        <button (click)="deleteProducto(producto.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a routerLink="/admin/productos/agregar">Agregar Producto</a>

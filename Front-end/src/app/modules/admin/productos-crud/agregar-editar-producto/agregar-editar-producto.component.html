@@ -1,0 +1,17 @@
+<h2>{{ editMode ? 'Editar Producto' : 'Agregar Producto' }}</h2>
+<form (ngSubmit)="saveProducto()">
+  <div>
+    <label for="nombre">Nombre</label>
+    <input id="nombre" [(ngModel)]="producto.nombre" name="nombre" required>
+  </div>
+  <div>
+    <label for="descripcion">Descripción</label>
+    <input id="descripcion" [(ngModel)]="producto.descripcion" name="descripcion" required>
+  </div>
+  <div>
+    <label for="precio">Precio</label>
+    <input id="precio" type="number" [(ngModel)]="producto.precio" name="precio" required>
+  </div>
+  <button type="submit">{{ editMode ? 'Guardar Cambios' : 'Agregar Producto' }}</button>
+</form>
+<a routerLink="/admin/productos">Cancelar</a>

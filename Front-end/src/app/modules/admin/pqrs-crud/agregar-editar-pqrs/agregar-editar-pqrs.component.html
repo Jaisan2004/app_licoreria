@@ -1,0 +1,21 @@
+<h2>{{ editMode ? 'Editar PQRs' : 'Agregar PQRs' }}</h2>
+<form (ngSubmit)="savePqr()">
+  <div>
+    <label for="descripcion">Descripción</label>
+    <input id="descripcion" [(ngModel)]="pqr.descripcion" name="descripcion" required>
+  </div>
+  <div>
+    <label for="fecha">Fecha</label>
+    <input id="fecha" type="date" [(ngModel)]="pqr.fecha" name="fecha" required>
+  </div>
+  <div>
+    <label for="estado">Estado</label>
+    <select id="estado" [(ngModel)]="pqr.estado" name="estado" required>
+      <option value="Pendiente">Pendiente</option>
+      <option value="Resuelto">Resuelto</option>
+      <option value="Cerrado">Cerrado</option>
+    </select>
+  </div>
+  <button type="submit">{{ editMode ? 'Guardar Cambios' : 'Agregar PQRs' }}</button>
+</form>
+<a routerLink="/admin/pqrs">Cancelar</a>
