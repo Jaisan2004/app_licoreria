@@ -1,4 +1,4 @@
-package co.edu.ue.config;
+// package co.edu.ue.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -8,9 +8,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
-@EnableWebSecurity
-public class SecurityConfig {
+// @Configuration
+// @EnableWebSecurity
+// public class SecurityConfig {
 	
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
@@ -24,4 +24,4 @@ public class SecurityConfig {
 				.build();
 	}
 
-}
+// }
