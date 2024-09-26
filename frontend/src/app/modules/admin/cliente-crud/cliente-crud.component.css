@@ -1,46 +1,107 @@
 .cliente-crud-container {
-    width: 50%;
-    margin: auto;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    margin-bottom: 5px;
-  }
-  
-  input {
-    margin-bottom: 15px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    margin-right: 10px;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button[type="button"] {
-    background-color: #f44336;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
+  width: 90vh;
+  margin: 80px auto 0; /* Añadimos 80px de margen superior para que no sea tapado por el menú */
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-family: 'Arial', sans-serif;
+  color: #343a40;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: 'Arial', sans-serif;
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+button[type="button"] {
+  background-color: #dc3545;
+  color: white;
+  margin-top: 10px;
+}
+
+button[type="button"]:hover {
+  background-color: #c82333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+thead th {
+  background-color: #343a40;
+  color: white;
+  padding: 10px;
+}
+
+tbody td {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+  text-align: center;
+}
+
+button.edit, button.delete {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+}
+
+button.edit {
+  background-color: #007bff;
+  color: white;
+}
+
+button.edit:hover {
+  background-color: #0056b3;
+}
+
+button.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+button.delete:hover {
+  background-color: #c82333;
+}

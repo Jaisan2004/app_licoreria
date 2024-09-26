@@ -1,27 +1,52 @@
+<app-home></app-home>
+
 <div class="cliente-crud-container">
-    <h2>{{ isEditing ? 'Editar Cliente' : 'Crear Cliente' }}</h2>
+  <h2>{{ isEditing ? 'Editar Usuario' : 'Crear Usuario' }}</h2>
+  
+  <form [formGroup]="clienteForm" (ngSubmit)="editOrCrear(isEditing)">
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" formControlName="nombre" type="text" required>
     
-    <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
-      <label for="nombre">Nombre:</label>
-      <input id="nombre" formControlName="nombre" type="text" required>
-      
-      <label for="email">Email:</label>
-      <input id="email" formControlName="email" type="email" required>
-      
-      <label for="telefono">Teléfono:</label>
-      <input id="telefono" formControlName="telefono" type="text" required>
-      
-      <button type="submit">{{ isEditing ? 'Actualizar' : 'Crear' }}</button>
-      <button type="button" (click)="resetForm()">Cancelar</button>
-    </form>
-  
-    <h3>Lista de Clientes</h3>
-    <ul>
-      <li *ngFor="let cliente of clientes">
-        {{ cliente.nombre }} - {{ cliente.email }} - {{ cliente.telefono }}
-        <button (click)="editCliente(cliente)">Editar</button>
-        <button (click)="deleteCliente(cliente.id)">Eliminar</button>
-      </li>
-    </ul>
-  </div>
-  
+    <label for="apellido">Apellido:</label>
+    <input id="apellido" formControlName="apellido" type="text" required>
+    
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" type="email" required>
+    
+    <label for="contrasena">Contraseña:</label>
+    <input id="contrasena" formControlName="password" type="password" required>
+    
+    <label for="telefono">Teléfono:</label>
+    <input id="telefono" formControlName="telefono" type="text" required>
+    
+    <button type="submit">{{ isEditing ? 'Actualizar' : 'Crear' }}</button>
+    <button type="button" (click)="resetForm()">Cancelar</button>
+  </form>
+
+  <h3>Lista de Usuarios</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Fecha de Registro</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{ cliente.usuNombre }}</td>
+        <td>{{ cliente.usuApellido }}</td>
+        <td>{{ cliente.usuEmail }}</td>
+        <td>{{ cliente.usuTelefono }}</td>
+        <td>{{ cliente.usuFechaRegistro | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+        <td>
+          <button class="edit" (click)="getCliente(cliente.usuId)">Editar</button>
+          <button class="delete" (click)="editCliente(cliente)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

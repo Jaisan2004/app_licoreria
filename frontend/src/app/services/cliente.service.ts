@@ -1,29 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
 
-  private apiUrl = 'http://localhost:3000/clientes';  // Replace with actual API endpoint
+  private myAppUrl: string;
+  private myApiUrl: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.myAppUrl = environment.endpoint;
+    this.myApiUrl = 'Usuario';
+   }
 
-  getClientes(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  getClientes(): Observable<string>{
+    return this.http.get<string>(`${this.myAppUrl}${this.myApiUrl}`);
   }
 
-  createCliente(cliente: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, cliente);
+  getCliente(id: number): Observable<string>{
+    return this.http.get<string>(`${this.myAppUrl}${this.myApiUrl}/ById/${id}`);
   }
 
-  updateCliente(id: number, cliente: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${id}`, cliente);
-  }
 
-  deleteCliente(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${id}`);
-  }
 }
