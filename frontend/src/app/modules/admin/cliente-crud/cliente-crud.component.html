@@ -1,1 +1,27 @@
-<p>cliente-crud works!</p>
+<div class="cliente-crud-container">
+    <h2>{{ isEditing ? 'Editar Cliente' : 'Crear Cliente' }}</h2>
+    
+    <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" formControlName="nombre" type="text" required>
+      
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email" required>
+      
+      <label for="telefono">Teléfono:</label>
+      <input id="telefono" formControlName="telefono" type="text" required>
+      
+      <button type="submit">{{ isEditing ? 'Actualizar' : 'Crear' }}</button>
+      <button type="button" (click)="resetForm()">Cancelar</button>
+    </form>
+  
+    <h3>Lista de Clientes</h3>
+    <ul>
+      <li *ngFor="let cliente of clientes">
+        {{ cliente.nombre }} - {{ cliente.email }} - {{ cliente.telefono }}
+        <button (click)="editCliente(cliente)">Editar</button>
+        <button (click)="deleteCliente(cliente.id)">Eliminar</button>
+      </li>
+    </ul>
+  </div>
+  
