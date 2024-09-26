@@ -67,26 +67,25 @@ export class AdminComponent {
       this.dataSource.paginator = this.paginator;
     }
   }
- /*
+ 
   ngOnInit(): void {
     this.getListUsuarios();
   }
 
 
  getListUsuarios() {
-    this.spinner.show();
-    this._usuariosService.getUsuarios().subscribe((data: any) => {
-      this.dataSource.data = data;
-      console.log(data)
-      this.temp = [...data];
-      this.spinner.hide();
-    },
-    (e: HttpErrorResponse) =>{
-      this._errorService.msjError(e);
-      this.spinner.hide()
-    });
+    // this.spinner.show();
+    // this._usuariosService.getUsuarios().subscribe((data: any) => {
+    //   this.dataSource.data = data;
+    //   console.log(data)
+    //   this.temp = [...data];
+    //   this.spinner.hide();
+    // },
+    // (e: HttpErrorResponse) =>{
+    //   this._errorService.msjError(e);
+    //   this.spinner.hide()
+    // });
   }
-    */
 
   updateFilter(event: any) {
     const val = event.target.value.toLowerCase();

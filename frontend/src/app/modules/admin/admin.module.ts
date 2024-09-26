@@ -4,6 +4,10 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin/admin.component';
 import { ClientePedidoComponent } from './cliente-pedido/cliente-pedido.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
@@ -13,7 +17,11 @@ import { ClientePedidoComponent } from './cliente-pedido/cliente-pedido.componen
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MatTableModule,
+    MatPaginatorModule,
+    NgxSpinnerModule,
+    MatSortModule
   ]
 })
 export class AdminModule { }
