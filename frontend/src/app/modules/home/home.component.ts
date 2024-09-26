@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 
@@ -8,5 +9,13 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  constructor(private router: Router) { }
 
+  ngOnInit(): void {
+  }
+
+  LogOut(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/Login']);
+  }
 }
