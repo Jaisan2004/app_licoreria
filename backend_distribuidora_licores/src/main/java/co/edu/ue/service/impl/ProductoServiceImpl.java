@@ -31,11 +31,6 @@ public class ProductoServiceImpl implements IProductoService{
 	}
 
 	@Override
-	public void deleteProducto(Integer id) {
-		productos.deleteById(id);
-	}
-
-	@Override
 	public Producto getProductoById(Integer id) {
 		return productos.findById(id).orElse(null);
 	}

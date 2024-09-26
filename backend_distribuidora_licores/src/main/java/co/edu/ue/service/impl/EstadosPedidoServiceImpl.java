@@ -31,11 +31,6 @@ public class EstadosPedidoServiceImpl implements IEstadosPedidoService{
 	}
 
 	@Override
-	public void deleteEstadosPedido(Integer id) {
-		estados.deleteById(id);
-	}
-
-	@Override
 	public EstadosPedido getEstadosPedidoById(Integer id) {
 		return estados.findById(id).orElse(null);
 	}

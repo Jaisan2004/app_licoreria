@@ -9,7 +9,6 @@ public interface IDireccioneService {
 	List<Direccione> getDirecciones();
 	Direccione postDirecciones(Direccione direccion);
 	Direccione updateDirecciones(Direccione direccion);
-	void deleteDirecciones(Integer id);
 	Direccione getDireccionesById(Integer id);
 
 }

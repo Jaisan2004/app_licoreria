@@ -9,7 +9,6 @@ public interface ICategoriaService {
 	List<Categoria> getCategoria();
 	Categoria postCategoria(Categoria categoria);
 	Categoria updateCategoria(Categoria categoria);
-	void deleteCategoria(Integer id);
 	Categoria getCategoriaById(Integer id);
 
 }

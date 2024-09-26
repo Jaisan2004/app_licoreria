@@ -9,7 +9,6 @@ public interface IPedidoService {
 	List<Pedido> getPedido();
 	Pedido postPedido(Pedido pedido);
 	Pedido updatePedido(Pedido pedido);
-	void deletePedido(Integer id);
 	Pedido getPedidoById(Integer id);
 
 }

@@ -9,6 +9,7 @@ import co.edu.ue.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -23,10 +24,13 @@ public class AuthController {
 	@Autowired
 	IUsuarioService _usuarioService;
 	
+	@Autowired
+    private PasswordEncoder passwordEncoder;
+	
 	@PostMapping(value="login")
 	public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
-		
-		return ResponseEntity.ok(_authService.login(request));
+		AuthResponse response = _authService.login(request);
+		return ResponseEntity.ok(response);
 	}
 	
 	@PostMapping(value="registro")
@@ -35,8 +39,14 @@ public class AuthController {
 		if(usuarioLocal != null) {
 			throw new Exception("Ya existe un usuario registrado con ese correo");
 		}else {
-			usuarioLocal = _usuarioService.postUsuario(usuario);
-			return new ResponseEntity<Usuario>(usuarioLocal, HttpStatus.OK);			
+			// Encripta la contraseña antes de guardar el usuario
+            String encryptedPassword = passwordEncoder.encode(usuario.getUsuContrasena());
+            usuario.setUsuContrasena(encryptedPassword);
+
+            // Guarda el usuario con la contraseña encriptada
+            usuarioLocal = _usuarioService.postUsuario(usuario);
+
+            return new ResponseEntity<Usuario>(usuarioLocal, HttpStatus.OK);			
 		}
 	}
 	

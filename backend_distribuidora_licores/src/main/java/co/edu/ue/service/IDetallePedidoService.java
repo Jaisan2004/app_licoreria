@@ -9,7 +9,6 @@ public interface IDetallePedidoService {
 	List<DetallesPedido> getDetalle();
 	DetallesPedido postDetalle(DetallesPedido detalle);
 	DetallesPedido updateDetalle(DetallesPedido detalle);
-	void deleteDetalle(Integer id);
 	DetallesPedido getDetalleById(Integer id);
 
 }

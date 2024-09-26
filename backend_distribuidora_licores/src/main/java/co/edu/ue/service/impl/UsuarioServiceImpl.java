@@ -31,11 +31,6 @@ public class UsuarioServiceImpl implements IUsuarioService{
 	}
 
 	@Override
-	public void deleteUsuario(Integer id) {
-		usuarios.deleteById(id);
-	}
-
-	@Override
 	public Usuario getUsuarioById(Integer id) {
 		return usuarios.findById(id).orElse(null);
 	}

@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,16 +39,6 @@ public class CategoriaController {
 	public ResponseEntity<Categoria> updateCategoria(@RequestBody Categoria categoria){
 		Categoria categorias = _categoriaService.updateCategoria(categoria);
 		return new ResponseEntity<Categoria>(categorias, HttpStatus.OK);
-	}
-	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deleteCategoria(@PathVariable Integer id) throws Exception {
-		Categoria cate = _categoriaService.getCategoriaById(id);
-		if(cate == null) {
-			throw new Exception("No se encontro ID");
-		}
-		_categoriaService.deleteCategoria(id);
-		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
 	@GetMapping("/{id}")

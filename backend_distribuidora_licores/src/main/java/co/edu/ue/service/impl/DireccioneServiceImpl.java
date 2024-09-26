@@ -31,11 +31,6 @@ public class DireccioneServiceImpl implements IDireccioneService{
 	}
 
 	@Override
-	public void deleteDirecciones(Integer id) {
-		direcciones.deleteById(id);
-	}
-
-	@Override
 	public Direccione getDireccionesById(Integer id) {
 		return direcciones.findById(id).orElse(null);
 	}

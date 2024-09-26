@@ -31,12 +31,6 @@ public class DetallePedidoServiceImpl implements IDetallePedidoService{
 	}
 
 	@Override
-	public void deleteDetalle(Integer id) {
-		detalles.deleteById(id);
-		
-	}
-
-	@Override
 	public DetallesPedido getDetalleById(Integer id) {
 		return detalles.findById(id).orElse(null);
 	}

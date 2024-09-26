@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,16 +38,6 @@ public class SeguimientoPedidoController {
 	public ResponseEntity<SeguimientoPedido> updateSeguimiento(@RequestBody SeguimientoPedido pedido){
 		SeguimientoPedido seg = _seguimientoService.updateSeguimientoPedido(pedido);
 		return new ResponseEntity<SeguimientoPedido>(seg, HttpStatus.OK);
-	}
-	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deleteSeguimiento(@PathVariable Integer id) throws Exception {
-		SeguimientoPedido seg = _seguimientoService.getSeguimientoPedidoById(id);
-		if(seg == null) {
-			throw new Exception("No se encontro ID");
-		}
-		_seguimientoService.deleteSeguimientoPedido(id);
-		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
 	@GetMapping("/{id}")

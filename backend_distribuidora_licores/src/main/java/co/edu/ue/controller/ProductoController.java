@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,17 +39,7 @@ public class ProductoController {
 		Producto prod = _productoService.updateProducto(pedido);
 		return new ResponseEntity<Producto>(prod, HttpStatus.OK);
 	}
-	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deleteProducto(@PathVariable Integer id) throws Exception {
-		Producto prod = _productoService.getProductoById(id);
-		if(prod == null) {
-			throw new Exception("No se encontro ID");
-		}
-		_productoService.deleteProducto(id);
-		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
-	}
-	
+
 	@GetMapping("/{id}")
 	public ResponseEntity<Producto> getProductoById(@PathVariable Integer id) throws Exception{
 		Producto prod = _productoService.getProductoById(id);

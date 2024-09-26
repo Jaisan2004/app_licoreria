@@ -31,11 +31,6 @@ public class SeguimientoPedidoImpl implements ISeguimientoPedidoService{
 	}
 
 	@Override
-	public void deleteSeguimientoPedido(Integer id) {
-		seguimientos.deleteById(id);
-	}
-
-	@Override
 	public SeguimientoPedido getSeguimientoPedidoById(Integer id) {
 		return seguimientos.findById(id).orElse(null);
 	}

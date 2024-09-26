@@ -2,8 +2,14 @@ package co.edu.ue.model;
 
 import java.io.Serializable;
 import jakarta.persistence.*;
+
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 
 /**
@@ -13,7 +19,7 @@ import java.util.List;
 @Entity
 @Table(name="usuarios")
 @NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
-public class Usuario implements Serializable {
+public class Usuario implements Serializable, UserDetails {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -39,6 +45,10 @@ public class Usuario implements Serializable {
 
 	@Column(name="usu_telefono")
 	private String usuTelefono;
+	
+	@Column(name="usu_rol")
+	private String usuRol;
+
 
 	//bi-directional many-to-one association to Direccione
 	@OneToMany(mappedBy="usuario")
@@ -106,6 +116,14 @@ public class Usuario implements Serializable {
 	public void setUsuTelefono(String usuTelefono) {
 		this.usuTelefono = usuTelefono;
 	}
+	
+	public String getUsuRol() {
+		return usuRol;
+	}
+	
+	public void setUsuRol(String usuRol) {
+		this.usuRol = usuRol;
+	}
 
 	public List<Direccione> getDirecciones() {
 		return this.direcciones;
@@ -149,6 +167,41 @@ public class Usuario implements Serializable {
 		pedido.setUsuario(null);
 
 		return pedido;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return List.of(new SimpleGrantedAuthority(getUsuRol()));
+	}
+	
+	@Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true; 
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true; 
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+	@Override
+	public String getPassword() {
+		return this.usuContrasena;
+	}
+
+	@Override
+	public String getUsername() {
+		return this.usuEmail;
 	}
 
 }

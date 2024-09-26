@@ -10,7 +10,6 @@ public interface IProductoService {
 	List<Producto> getProducto();
 	Producto postProducto(Producto producto);
 	Producto updateProducto(Producto producto);
-	void deleteProducto(Integer id);
 	Producto getProductoById(Integer id);
 
 }

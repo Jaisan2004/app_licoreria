@@ -31,11 +31,6 @@ public class PedidoServiceImpl implements IPedidoService{
 	}
 
 	@Override
-	public void deletePedido(Integer id) {
-		pedidos.deleteById(id);
-	}
-
-	@Override
 	public Pedido getPedidoById(Integer id) {
 		return pedidos.findById(id).orElse(null);
 	}

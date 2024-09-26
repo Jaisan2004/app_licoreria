@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,16 +39,6 @@ public class EstadosPedidoController {
 	public ResponseEntity<EstadosPedido> updateEstado(@RequestBody EstadosPedido pedido){
 		EstadosPedido est = _estadoSevice.updateEstadosPedido(pedido);
 		return new ResponseEntity<EstadosPedido>(est, HttpStatus.OK);
-	}
-	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deleteEstado(@PathVariable Integer id) throws Exception {
-		EstadosPedido est = _estadoSevice.getEstadosPedidoById(id);
-		if(est == null) {
-			throw new Exception("No se encontro ID");
-		}
-		_estadoSevice.deleteEstadosPedido(id);
-		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	
 	@GetMapping("/{id}")
