@@ -1,0 +1,27 @@
+#cuerpo {
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1800px;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+.example-container {
+    position: relative;
+}
+
+.example-table-container {
+    position: relative;
+    text-align: center;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+}

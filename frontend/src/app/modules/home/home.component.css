@@ -1,0 +1,32 @@
+#logo{
+    max-width: 32px;
+    max-height: 32px;
+}
+
+#exit{
+    max-width: 18px;
+    max-height: 18px;
+}
+
+.navbar a:hover 
+{
+	color: #47141e!important;
+}
+
+.nav-link
+{
+	color: #ffffff!important;
+	font-weight: 500;
+	font-size:  14px;
+    margin: 0 15px;
+}
+
+#cuerpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding:0;
+    height: 100%;
+    background: linear-gradient(#000000, transparent);
+}
