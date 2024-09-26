@@ -17,6 +17,11 @@ import {MatTableModule} from '@angular/material/table';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { ToastrModule } from 'ngx-toastr';
+import { ReactiveFormsModule } from '@angular/forms';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { authInterceptor } from './utils/auth.interceptor';
 
 
 @NgModule({
@@ -38,9 +43,13 @@ import { NgxSpinnerModule } from "ngx-spinner";
     AppRoutingModule,
     MatTableModule,
     MatPaginatorModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ToastrModule.forRoot(),
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
+    provideHttpClient(withInterceptors([authInterceptor])),
     provideClientHydration(),
     provideAnimationsAsync()
   ],

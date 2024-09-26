@@ -3,7 +3,8 @@
         <div class="row border rounded-5 p-3 bg-white shadow box-area">
 
             <!-- Left Side (Image/Logo) -->
-            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #47141e;">
+            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
+                style="background: #47141e;">
                 <div class="featured-image mb-3">
                     <img src="icons/logo3.png" class="img-fluid" style="width: 950px;">
                 </div>
@@ -15,21 +16,34 @@
                     <div class="header-text mb-4">
                         <h2 style="text-align: center">REGISTRARSE</h2>
                     </div>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Nombre Completo">
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="email" class="form-control form-control-lg bg-light fs-6" placeholder="Correo Electrónico">
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Contraseña">
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Confirmar Contraseña">
-                    </div>
-                    <div class="input-group mb-3">
-                        <button class="btn btn-outline-success w-100 fs-6">Registrarse</button>
-                    </div>
+                    <form [formGroup]="formRegistro">
+                        <div class="input-group mb-3">
+                            <input type="text" formControlName="nombre" class="form-control form-control-lg bg-light fs-6" placeholder="Nombre">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" formControlName="apellido" class="form-control form-control-lg bg-light fs-6"
+                                placeholder="Apellido">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="number" formControlName="telefono" class="form-control form-control-lg bg-light fs-6"
+                                placeholder="Telefono">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="email" formControlName="email" class="form-control form-control-lg bg-light fs-6"
+                                placeholder="Correo Electrónico">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" formControlName="password" class="form-control form-control-lg bg-light fs-6"
+                                placeholder="Contraseña">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" formControlName="password2" class="form-control form-control-lg bg-light fs-6"
+                                placeholder="Confirmar Contraseña">
+                        </div>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-success w-100 fs-6" (click)="registro()">Registrarse</button>
+                        </div>
+                    </form>
                     <div class="row">
                         <small>¿Ya tienes una cuenta? <a href="#" style="color: #47141e;">Iniciar Sesión</a></small>
                     </div>
