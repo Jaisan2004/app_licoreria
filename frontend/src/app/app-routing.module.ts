@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'Login', component: LoginComponent },            // componente de login
   { path: 'Register', component: RegisterComponent },      // componente de registro
   { path: 'Home', component: HomeComponent, canActivate: [authGuard] },              // componente de inicio
+  { path: 'cliente-crud', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) }, // componente de administrador
   { path: '**', redirectTo: '/Login' }  
 ];
 
