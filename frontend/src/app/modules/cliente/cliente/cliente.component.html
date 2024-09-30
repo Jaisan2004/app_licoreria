@@ -1,1 +1,17 @@
-<p>cliente works!</p>
+<div class="cliente-container">
+    <h2>Información del Cliente</h2>
+  
+    <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" formControlName="nombre" type="text" required>
+  
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email" required>
+  
+      <label for="telefono">Teléfono:</label>
+      <input id="telefono" formControlName="telefono" type="text" required>
+  
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+  

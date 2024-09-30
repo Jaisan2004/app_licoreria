@@ -8,6 +8,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { MatSortModule } from '@angular/material/sort';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatPaginatorModule,
     NgxSpinnerModule,
-    MatSortModule
+    MatSortModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

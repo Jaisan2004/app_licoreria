@@ -30,13 +30,13 @@ import { authInterceptor } from './utils/auth.interceptor';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ClienteComponent,
     ClienteCrudComponent,
     ProductosCrudComponent,
     ProveedoresCrudComponent,
     CarritoComponent,
+    ClienteComponent,
     PedidoComponent,
-    ProductosComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+.pedido-container {
+    width: 50%;
+    margin: auto;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+  }
+  

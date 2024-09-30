@@ -1,1 +1,12 @@
-<p>pedido works!</p>
+<div class="pedido-container">
+    <h2>Mis Pedidos</h2>
+  
+    <ul class="pedido-lista">
+      <li *ngFor="let pedido of pedidos">
+        <span>Pedido #{{ pedido.id }}</span>
+        <span>Total: {{ pedido.total | currency }}</span>
+        <button (click)="verDetalles(pedido)">Ver Detalles</button>
+      </li>
+    </ul>
+  </div>
+  

@@ -1,1 +1,17 @@
-<p>carrito works!</p>
+<div class="carrito-container">
+    <h2>Mi Carrito</h2>
+  
+    <ul class="carrito-lista">
+      <li *ngFor="let producto of productosEnCarrito">
+        <span>{{ producto.nombre }}</span>
+        <span>{{ producto.precio | currency }}</span>
+        <button (click)="eliminarDelCarrito(producto)">Eliminar</button>
+      </li>
+    </ul>
+  
+    <div class="total-carrito">
+      <h3>Total: {{ calcularTotal() | currency }}</h3>
+      <button (click)="procesarCompra()">Procesar Compra</button>
+    </div>
+  </div>
+  

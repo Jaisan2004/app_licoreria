@@ -1,1 +1,27 @@
-<p>productos-crud works!</p>
+<div class="productos-crud-container">
+    <h2>{{ isEditing ? 'Editar Producto' : 'Crear Producto' }}</h2>
+  
+    <form [formGroup]="productoForm" (ngSubmit)="onSubmit()">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" formControlName="nombre" type="text" required>
+  
+      <label for="precio">Precio:</label>
+      <input id="precio" formControlName="precio" type="number" required>
+  
+      <label for="categoriaId">Categoría:</label>
+      <input id="categoriaId" formControlName="categoriaId" type="number" required>
+  
+      <button type="submit">{{ isEditing ? 'Actualizar' : 'Crear' }}</button>
+      <button type="button" (click)="resetForm()">Cancelar</button>
+    </form>
+  
+    <h3>Lista de Productos</h3>
+    <ul>
+      <li *ngFor="let producto of productos">
+        {{ producto.nombre }} - {{ producto.precio | currency }}
+        <button (click)="editProducto(producto)">Editar</button>
+        <button (click)="deleteProducto(producto.id)">Eliminar</button>
+      </li>
+    </ul>
+  </div>
+  
